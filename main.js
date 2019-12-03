@@ -1,15 +1,15 @@
 new Vue({
   el: '#app',
   data: {
-    message: 'Greetings!',
+    km: 0,
+    m: 0,
   },
-  computed: {
-    reverseMessage() {
-      console.log('computed function run');
-      return this.message
-        .split('')
-        .reverse()
-        .join('');
+  watch: {
+    km() {
+      this.m = this.km ? this.km * 1000 : 0;
+    },
+    m() {
+      this.km = this.m ? this.m / 1000 : 0;
     },
   },
 });

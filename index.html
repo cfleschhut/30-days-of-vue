@@ -8,32 +8,24 @@
   </head>
   <body>
     <div id="app">
-      <div class="card">
-        <header class="card-header card-header-title">
-          <span>Original:</span>
-          {{ message }}
-        </header>
+      <div class="field">
+        <label class="label">KM</label>
+        <input
+          v-model="km"
+          class="input"
+          type="number"
+          placeholder="Type a length in KM!"
+        />
       </div>
 
-      <div class="card">
-        <header class="card-header card-header-title">
-          <span>Reversed:</span>
-          {{ reverseMessage }}
-        </header>
-      </div>
-
-      <div class="card">
-        <header class="card-header card-header-title">
-          <span>Reversed:</span>
-          {{ reverseMessage }}
-        </header>
-      </div>
-
-      <div class="card">
-        <header class="card-header card-header-title">
-          <span>Reversed:</span>
-          {{ reverseMessage }}
-        </header>
+      <div class="field">
+        <label class="label">M</label>
+        <input
+          v-model="m"
+          class="input"
+          type="number"
+          placeholder="Type a length in M!"
+        />
       </div>
     </div>
 
