@@ -1,15 +1,27 @@
 new Vue({
   el: '#app',
   data: {
-    km: 0,
-    m: 0,
+    name: 'Loading…',
+    email: 'Loading…',
+    company: {
+      name: 'Loading…',
+      catchPhrase: 'Loading…',
+    },
   },
-  watch: {
-    km() {
-      this.m = this.km ? this.km * 1000 : 0;
-    },
-    m() {
-      this.km = this.m ? this.m / 1000 : 0;
-    },
+  created() {
+    axios.get('http://jsonplaceholder.typicode.com/users').then(({ data }) => {
+      const randomUser = data[Math.floor(Math.random() * data.length)];
+
+      this.name = randomUser.name;
+      this.email = randomUser.email;
+      this.company.name = randomUser.company.name;
+      this.company.catchPhrase = randomUser.company.catchPhrase;
+    });
+  },
+  mounted() {
+    console.log(this.$el);
+  },
+  updated() {
+    console.log(this.$el);
   },
 });

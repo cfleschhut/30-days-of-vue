@@ -8,28 +8,28 @@
   </head>
   <body>
     <div id="app">
-      <div class="field">
-        <label class="label">KM</label>
-        <input
-          v-model="km"
-          class="input"
-          type="number"
-          placeholder="Type a length in KM!"
-        />
-      </div>
-
-      <div class="field">
-        <label class="label">M</label>
-        <input
-          v-model="m"
-          class="input"
-          type="number"
-          placeholder="Type a length in M!"
-        />
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            {{name}}
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>{{company.name}}</p>
+            <p>"{{company.catchPhrase}}"</p>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">
+            {{email}}
+          </a>
+        </footer>
       </div>
     </div>
 
     <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
