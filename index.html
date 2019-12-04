@@ -12,6 +12,9 @@
   </head>
   <body>
     <div id="app">
+      <local-component></local-component>
+      <counter-one></counter-one>
+
       <tweet-component
         v-for="tweet in tweets"
         :key="tweet.id"

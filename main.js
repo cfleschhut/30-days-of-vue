@@ -1,3 +1,25 @@
+const localComponent = {
+  template: `<p>{{message}}</p>`,
+  data() {
+    return {
+      message: 'Hello World!',
+    };
+  },
+};
+
+let counterOne = {
+  template: `
+    <button class="component-button" @click="counter++">
+      You clicked me {{counter}} times
+    </button>
+  `,
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+};
+
 Vue.component('tweet-content', {
   props: ['tweet'],
   template: `
@@ -97,5 +119,9 @@ new Vue({
 
       this.tweets.push(newTweet);
     },
+  },
+  components: {
+    'local-component': localComponent,
+    'counter-one': counterOne,
   },
 });
