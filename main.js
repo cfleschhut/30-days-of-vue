@@ -1,3 +1,28 @@
+let renderComponent = {
+  render(h) {
+    return h(
+      'div',
+      {
+        attrs: {
+          class: 'render-card',
+        },
+      },
+      [
+        h(
+          'header',
+          {
+            attrs: {
+              class: 'card-header card-header-title',
+            },
+          },
+          this.message,
+        ),
+      ],
+    );
+  },
+  props: ['message'],
+};
+
 let multiLineTemplate = {
   template: `
     <div class="card">
@@ -133,6 +158,7 @@ new Vue({
     },
   },
   components: {
+    'render-component': renderComponent,
     'local-component': localComponent,
     'counter-one': counterOne,
     'multi-line-template': multiLineTemplate,
