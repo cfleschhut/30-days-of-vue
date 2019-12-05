@@ -1,3 +1,14 @@
+let multiLineTemplate = {
+  template: `
+    <div class="card">
+      <header class="card-header card-header-title">
+        {{ message }}
+      </header>
+    </div>
+   `,
+  props: ['message'],
+};
+
 const localComponent = {
   template: `<p>{{message}}</p>`,
   data() {
@@ -111,6 +122,7 @@ new Vue({
   el: '#app',
   data: {
     tweets,
+    message: 'Greetings!',
   },
   methods: {
     addTweetMessage(tweet) {
@@ -123,5 +135,6 @@ new Vue({
   components: {
     'local-component': localComponent,
     'counter-one': counterOne,
+    'multi-line-template': multiLineTemplate,
   },
 });
