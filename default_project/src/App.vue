@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <NumberDisplay />
+    <NumberSubmit />
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
@@ -7,11 +9,15 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import NumberDisplay from "./components/NumberDisplay";
+import NumberSubmit from "./components/NumberSubmit";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    HelloWorld,
+    NumberDisplay,
+    NumberSubmit
   }
 };
 </script>
