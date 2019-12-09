@@ -1,23 +1,18 @@
 <template>
   <div>
-    <h2>The numbers are {{ numbers }}!</h2>
+    <h2>The numbers are {{ storeState.numbers }}!</h2>
   </div>
 </template>
 
 <script>
-import { EventBus } from "../event-bus";
+import { store } from "../store";
 
 export default {
   name: "NumberDisplay",
   data() {
     return {
-      numbers: [1, 2, 3]
+      storeState: store.state
     };
-  },
-  created() {
-    EventBus.$on("number-added", number => {
-      this.numbers.push(number);
-    });
   }
 };
 </script>
