@@ -1,34 +1,23 @@
 <template>
   <div id="app">
-    <NumberDisplay />
-    <NumberSubmit />
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="container">
+      <div class="pokemon">
+        <PokemonCard pokemon="charizard" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import NumberDisplay from "./components/NumberDisplay";
-import NumberSubmit from "./components/NumberSubmit";
+import BlastoiseCard from "./components/BlastoiseCard";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
-    NumberDisplay,
-    NumberSubmit
+    PokemonCard: BlastoiseCard
   }
 };
 </script>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style src="./styles.css">
 </style>
