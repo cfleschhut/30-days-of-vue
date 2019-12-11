@@ -11,7 +11,7 @@ const routes = [
   { path: '*', component: NotFound },
 ];
 
-export const router = new VueRouter({
+export default new VueRouter({
   mode: 'history',
   routes,
 });

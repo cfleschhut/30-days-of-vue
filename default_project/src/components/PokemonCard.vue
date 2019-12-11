@@ -2,9 +2,9 @@
   <div class="card has-text-weight-bold has-text-white" :class="[`card--${getPokemon.name}`]">
     <div class="card-image">
       <div class="card-image-container">
-        <img
-          :src="`http://static.pokemonpets.com/images/monsters-images-800-800/${getPokemon.imageTag}`"
-        />
+        <img v-show="getPokemon.name === 'blastoise'" src="../assets/blastoise.png" />
+        <img v-show="getPokemon.name === 'charizard'" src="../assets/charizard.png" />
+        <img v-show="getPokemon.name === 'venusaur'" src="../assets/venusaur.png" />
       </div>
     </div>
     <div class="card-content has-text-centered">
@@ -38,7 +38,6 @@ const pokemonData = [
   {
     id: 1,
     name: "charizard",
-    imageTag: "6-Charizard.png",
     hp: 78,
     type: "🔥",
     weight: 199,
@@ -47,7 +46,6 @@ const pokemonData = [
   {
     id: 2,
     name: "blastoise",
-    imageTag: "9-Blastoise.png",
     hp: 79,
     type: "💧",
     weight: 223,
@@ -56,7 +54,6 @@ const pokemonData = [
   {
     id: 3,
     name: "venusaur",
-    imageTag: "8003-Mega-Venusaur.png",
     hp: 80,
     type: "🍃",
     weight: 220,
