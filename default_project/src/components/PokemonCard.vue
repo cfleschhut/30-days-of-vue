@@ -1,5 +1,5 @@
 <template>
-  <div class="card has-text-weight-bold has-text-white" :class="[`card--${pokemon}`]">
+  <div class="card has-text-weight-bold has-text-white" :class="[`card--${getPokemon.name}`]">
     <div class="card-image">
       <div class="card-image-container">
         <img
@@ -34,39 +34,42 @@
 </template>
 
 <script>
-const pokemonData = {
-  charizard: {
-    name: "Charizard",
+const pokemonData = [
+  {
+    id: 1,
+    name: "charizard",
     imageTag: "6-Charizard.png",
     hp: 78,
     type: "🔥",
     weight: 199,
     height: 1.7
   },
-  blastoise: {
-    name: "Blastoise",
+  {
+    id: 2,
+    name: "blastoise",
     imageTag: "9-Blastoise.png",
     hp: 79,
     type: "💧",
     weight: 223,
     height: 1.6
   },
-  venusaur: {
-    name: "Venusaur",
+  {
+    id: 3,
+    name: "venusaur",
     imageTag: "8003-Mega-Venusaur.png",
     hp: 80,
     type: "🍃",
     weight: 220,
     height: 2.0
   }
-};
+];
 
 export default {
-  name: "BlastoiseCard",
-  props: ["pokemon"],
+  name: "PokemonCard",
+  props: ["id"],
   computed: {
     getPokemon() {
-      return pokemonData[this.pokemon];
+      return pokemonData.find(pokemon => pokemon.id === Number(this.id));
     }
   }
 };
